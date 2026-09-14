@@ -7,12 +7,19 @@ This project focuses on designing a system for validating and monitoring the RPM
 
 3- Components description
 The required materials for managing the whole procedure and develop such systems are as following
+
 a) A2212 BLDC Motor
+
 b) 30 A Electronic Speed Controller
+
 c) 10K potentiometer
+
 d) Drone arm and propeller 
+
 e) Fuse holder with 15A fuse
+
 f) 16x2 LCD Display
+
 g) TM4C123GH6PM (Tiva C Series)
 
 4- Project Process
