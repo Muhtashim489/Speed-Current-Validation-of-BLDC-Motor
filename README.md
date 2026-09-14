@@ -26,12 +26,21 @@ g) TM4C123GH6PM (Tiva C Series)
 The TM4C123GH6PM microcontroller processes sensor inputs to calculate and display motor speed. The ACS712 current sensor monitors current draw for load detection, while an optocoupler generates pulse signals to measure RPM. A potentiometer adjusts motor speed by varying voltage, allowing users to observe its effect on performance. The system maps standard speed values against input voltage for comparison with measured RPM.
 
 5- Steps to run the project in flowchart context
+
 	Reload and downloading the code
+
 	Press the reset button
+
 	Voltage will be varied by using potentiometer
+
 	The LCD will display RPM and Current value.
+
 	When adc is in range between 100 and 4095, the motor will start to rotate.
+
 	Optocoupler will calculate number of edges and determine RPM.
+
 	Current sensor detects how much motor draws current.
+
 	Data transmission of rpm and current would be done by using UART.
+
 	Data will plot on microsoft excel sheet.
