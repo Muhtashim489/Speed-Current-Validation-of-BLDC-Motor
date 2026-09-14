@@ -1,46 +1,42 @@
-# Speed-Current-Validation-of-BLDC-Motor
-1- Objectives
-The target is about to validate the required speed as close as much of the BLDC motor and also determine how much motor is drawing the current during this process. By seeking this, the primary goal is to understand motor dynamics, real applications for drones and enhanced hardware improvement.
+# Speed & Current Validation of BLDC Motor
 
-2- Introduction
-This project focuses on designing a system for validating and monitoring the RPM (rotations per minute) of a BLDC motor using the TM4C123GH6PM microcontroller, with real time display of speed on a 16x2 LCD and plot the graph on excel using serial communication.
+## 1. Objectives
+The main goal of this project is to validate the actual RPM of a BLDC motor against target speeds while monitoring real-time current draw. 
 
-3- Components description
-The required materials for managing the whole procedure and develop such systems are as following
+**Key Objectives:**
+* Analyze BLDC motor dynamics under varying loads.
+* Validate performance characteristics for drone propulsion systems.
+* Gather empirical data for future hardware optimizations.
 
-a) A2212 BLDC Motor
+---
 
-b) 30 A Electronic Speed Controller
+## 2. Introduction
+This project details the design and implementation of an embedded monitoring and validation system for a BLDC motor using the **TM4C123GH6PM (Tiva C)** microcontroller. 
 
-c) 10K potentiometer
+The system reads speed control inputs, measures actual rotational speed and current consumption, displays metrics live on a 16x2 LCD, and streams telemetry data via UART for real-time graphical plotting in Microsoft Excel.
 
-d) Drone arm and propeller 
+---
 
-e) Fuse holder with 15A fuse
+## 3. Materials
 
-f) 16x2 LCD Display
+| Component | Description / Specification |
+| :--- | :--- |
+| **Microcontroller** | TM4C123GH6PM (Tiva C Series) |
+| **Motor** | A2212 BLDC Motor |
+| **ESC** | 30A Electronic Speed Controller |
+| **Current Sensor** | ACS712 Current Sensor Module |
+| **Speed Sensor** | Optocoupler (Optical Tachometer setup) |
+| **Display** | 16x2 Character LCD |
+| **Input Control** | 10kΩ Potentiometer |
+| **Protection** | Fuse Holder with 15A Fuse |
+| **Mechanical Test Rig** | Drone Arm & Propeller assembly |
 
-g) TM4C123GH6PM (Tiva C Series)
+---
 
-4- Project Process
+## 4. System Architecture & Operation
+The **TM4C123GH6PM** acts as the central processing unit:
 
-The TM4C123GH6PM microcontroller processes sensor inputs to calculate and display motor speed. The ACS712 current sensor monitors current draw for load detection, while an optocoupler generates pulse signals to measure RPM. A potentiometer adjusts motor speed by varying voltage, allowing users to observe its effect on performance. The system maps standard speed values against input voltage for comparison with measured RPM.
-
-5- Steps to run the project in flowchart context
-	Reload and downloading the code
-
-	Press the reset button
-
-	Voltage will be varied by using potentiometer
-
-	The LCD will display RPM and Current value.
-
-	When adc is in range between 100 and 4095, the motor will start to rotate.
-
-	Optocoupler will calculate number of edges and determine RPM.
-
-	Current sensor detects how much motor draws current.
-
-	Data transmission of rpm and current would be done by using UART.
-
-	Data will plot on microsoft excel sheet.
+1. **Speed Command:** A 10kΩ potentiometer acts as an analog input to set the motor throttle.
+2. **Current Monitoring:** An **ACS712 sensor** continuously tracks line current to evaluate electrical load.
+3. **RPM Feedback:** An **optocoupler** detects rotor passes, generating digital pulse edges to calculate rotational speed.
+4. **Telemetry & Output:** Data is sent to the 16x2 LCD for live display and transmitted via UART to Microsoft Excel for visual plotting and logged comparison against theoretical speed mappings.
