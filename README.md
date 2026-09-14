@@ -1,13 +1,13 @@
 # Speed-Current-Validation-of-BLDC-Motor
 1- Objectives
-   The target is about to validate the required speed as close as much of the BLDC motor and also determine how much motor is drawing the current during this process. By seeking this, the primary goal is to understand motor dynamics, real applications for drones and enhanced hardware improvement.
+The target is about to validate the required speed as close as much of the BLDC motor and also determine how much motor is drawing the current during this process. By seeking this, the primary goal is to understand motor dynamics, real applications for drones and enhanced hardware improvement.
 
 2- Introduction
-   This project focuses on designing a system for validating and monitoring the RPM (rotations per minute) of a BLDC motor using the TM4C123GH6PM microcontroller, with real time display of speed on a 16x2 LCD and plot the graph on excel using serial communication.
+This project focuses on designing a system for validating and monitoring the RPM (rotations per minute) of a BLDC motor using the TM4C123GH6PM microcontroller, with real time display of speed on a 16x2 LCD and plot the graph on excel using serial communication.
 
 3- Components description
-
 The required materials for managing the whole procedure and develop such systems are as following
+
 a) A2212 BLDC Motor
 
 b) 30 A Electronic Speed Controller
